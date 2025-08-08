@@ -1,0 +1,40 @@
+.ap-elements-map-tile {
+  position: absolute;
+  
+  width: var(--map-tile-size);
+  height: var(--map-tile-size);
+  
+  display: inline-flex;
+  flex-direction: column;
+  cursor: pointer;
+  
+  background: lightgrey;
+  box-sizing: border-box;
+  border: 2px solid grey;
+  transition: scale 0.045s;
+
+  &:hover {
+    background: grey;
+  }
+  
+  &.ap-elements-map-tile--selected {
+    border-color: black;
+    scale: 1.05;
+    transform-origin: 50% 50%;
+    z-index: 1;
+  }
+
+  & .ap-elements-map-tile_buildings {
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  & .ap-elements-map-tile_units {
+    height: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

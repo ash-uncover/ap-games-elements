@@ -1,0 +1,21 @@
+{
+  "name": "elements",
+  "url": "http://localhost:9090",
+  "provides": {
+    "ap-games/game": {
+      "life": {
+        "attributes": {
+          "name": "Elements",
+          "description": "game",
+          "thumbnail": "/images/thumbnail.jpg"
+        },
+        "elements": {
+          "main": {
+            "url": "",
+            "type": "iframe"
+          }
+        }
+      }
+    }
+  }
+}

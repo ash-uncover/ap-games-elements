@@ -1,0 +1,35 @@
+:root {
+  --map-tile-size: 10rem;
+}
+
+.ap-elements-game {
+  position: relative;
+  height: 100%;
+
+  & .ap-elements-game-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3rem;
+  }
+
+  & .ap-elements-game_main {
+    position: absolute;
+    top: 3rem;
+    bottom: 1rem;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+  }
+
+  & .ap-elements-game_footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1rem;
+    background: black;
+    color: white;
+  }
+}

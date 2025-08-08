@@ -1,0 +1,33 @@
+:root {
+  --ap-elements-element-selector-tile--size: 4rem;
+  --ap-elements-element-selector-tile--border-radius: 0.5rem;
+  --ap-elements-element-selector-tile--border-width: 2px;
+  --ap-elements-element-selector-tile--border-color: white;
+}
+
+.ap-elements-element-selector-tile {
+  &::hover {
+    --ap-hexagon--background-color: 'green' !important;
+  }
+  & .ap-elements-element-selector-tile__content {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    cursor: pointer;
+
+    border-color: var(--ap-elements-element-selector-tile--border-color);
+    border-radius: var(--ap-elements-element-selector-tile--border-radius);
+    border-style: solid;
+    border-width: var(--ap-elements-element-selector-tile--border-width);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &>.ap-elements-element-selector-tile__image {
+      width: 50%;
+      aspect-ratio: 1;
+    }
+  }
+}

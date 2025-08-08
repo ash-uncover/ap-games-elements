@@ -1,0 +1,11 @@
+.ap-elements-game-setup-player {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  & .ap-elements-game-setup-player__section {
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+  }
+}

@@ -1,0 +1,84 @@
+{
+    "LOADING": "Loading...",
+    "BACK": "Back",
+    "CLOSE": "Close",
+    "app": {
+      "start": "Press any key"
+    },
+    "home": {
+      "menu": "Home",
+      "title": "Home",
+      "play": {
+        "name": "Play",
+        "description": "Create new game or load an saved one",
+        "new": {
+          "name": "New",
+          "description": "Create new game"
+        },
+        "load": {
+          "name": "Load",
+          "description": "Load saved game"
+        },
+        "online": {
+          "name": "Online",
+          "description": "Start new online game"
+        }
+      },
+      "settings": {
+        "name": "Settings",
+        "game": {
+          "name": "General",
+          "description": "General Settings",
+          "lang": {
+            "title": "Language"
+          },
+          "theme": {
+            "title": "Theme"
+          },
+          "keys": {
+            "title": "Key Bindings"
+          }
+        },
+        "audio": {
+          "name": "Audio",
+          "description": "Audio Settings",
+          "master": {
+            "title": "Master Volume",
+            "enable": "Enable sounds"
+          },
+          "game": {
+            "title": "Game Volume",
+            "enable": "Enable Game sounds"
+          },
+          "interface": {
+            "title": "Interface Volume",
+            "enable": "Enable Interface sounds"
+          },
+          "music": {
+            "title": "Music Volume",
+            "enable": "Enable music"
+          }
+        },
+        "display": {
+          "name": "Display",
+          "description": "Display Settings",
+          "brightness": {
+            "title": "Brightness"
+          },
+          "contrast": {
+            "title": "Contrast"
+          }
+        }
+      },
+      "credits": {
+        "name": "Credits",
+        "description": "Credits",
+        "art": {
+          "title": "Arts"
+        }
+      },
+      "exit": {
+        "menu": "Exit"
+      }
+    }
+  }

@@ -1,0 +1,17 @@
+.ap-elements-game-header {
+  background: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  justify-content: space-between;
+
+  & .ap-elements-game-header_button-end {
+    &.ap-elements-game-header_button-end--complete {
+      border: 2px solid gold;
+    }
+    &.ap-elements-game-header_button-end--incomplete {
+
+    }
+  }
+}

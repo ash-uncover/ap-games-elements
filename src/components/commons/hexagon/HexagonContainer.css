@@ -1,0 +1,16 @@
+:root {
+  --ap-hexagon-container--hexagon-background-color: 'transparent';
+  --ap-hexagon-container--hexagon-border-width: 2px;
+  --ap-hexagon-container--hexagon-size: 0;
+}
+
+.ap-hexagon-container {
+
+  &.ap-hexagon-container--vertical {
+    margin-bottom: calc(var(--ap-hexagon-container--hexagon-size) / 4 + var(--ap-hexagon-container--hexagon-border-width))
+  }
+  
+  &.ap-hexagon-container--horizontal {
+    margin-right: calc(var(--ap-hexagon-container--hexagon-size) / 4 + var(--ap-hexagon-container--hexagon-border-width))
+  }
+}

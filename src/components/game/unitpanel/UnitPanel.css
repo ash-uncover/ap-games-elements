@@ -1,0 +1,16 @@
+.ap-elements-unit-panel {
+  position: absolute;
+  bottom: 1rem;
+  left: 20rem;
+  right: 20rem;
+  height: 6rem;
+
+  & .ap-elements-unit-panel_action {
+    &.ap-elements-unit-panel_action--all {
+      background-color: aqua;
+    }
+    &.ap-elements-unit-panel_action--some {
+      background-color: beige;
+    }
+  }
+}

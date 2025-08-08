@@ -1,0 +1,33 @@
+.ap-elements-game-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;  
+
+  &.ap-elements-game-container--moving {
+    cursor: move;
+  }
+
+  & .ap-elements-game-container_scaler {
+    position: absolute;
+    top: 1rem;
+    padding: 0.5rem;
+    margin: auto;
+    background: grey;
+    color: black;
+    border: 1px solid black;
+    z-index: 1;
+  }
+
+  & .ap-elements-game-container_content {
+    transition: scale 0.075s;
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    &.ap-elements-game-container_content--moving {
+      pointer-events: none;
+    }
+  }
+}

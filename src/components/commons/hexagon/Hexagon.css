@@ -1,0 +1,79 @@
+/*
+  sqrt(3) / 2 = 0.8660254037844386
+  sqrt(3) / 4 = 0.4330127018922193
+*/
+
+.ap-hexagon {
+  --ap-hexagon--background-color: var(--ap-hexagon-container--hexagon-background-color);
+  --ap-hexagon--border-width: var(--ap-hexagon-container--hexagon-border-width);
+  --ap-hexagon--size: var(--ap-hexagon-container--hexagon-size);
+
+  user-select: none;
+
+  margin-bottom: calc(-1 * var(--ap-hexagon--border-width));
+  margin-right: calc(-1 * var(--ap-hexagon--border-width));
+
+  &.ap-hexagon--vertical {
+    height: calc(3 * var(--ap-hexagon--size) / 4);
+    aspect-ratio: 0.8660254037844386 / 0.75;
+
+    
+    & .ap-hexagon__layer--border {
+      height: var(--ap-hexagon--size);
+      width: 100%;
+    }
+
+    & .ap-hexagon__layer {
+      clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+    }
+  }
+
+  &.ap-hexagon--horizontal {
+    width: calc(3 * var(--ap-hexagon--size) / 4);
+    aspect-ratio: 0.75 / 0.8660254037844386;
+
+    & .ap-hexagon__layer--border {
+      width: var(--ap-hexagon--size);
+      height: 100%;
+    }
+
+    & .ap-hexagon__layer {
+      clip-path: polygon(0% 50%, 25% 100%, 75% 100%, 100% 50%, 75% 0%, 25% 0%);
+    }
+  }
+
+  & .ap-hexagon__layer {
+    transition-property: top, bottom, left, right;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-out;
+  }
+
+  & .ap-hexagon__layer--border {
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    transition: background-color 0.5s ease-out;
+    background-color: var(--ap-hexagon--background-color);
+  }
+
+  & .ap-hexagon__layer--content-container {
+    position: absolute;
+    overflow: hidden;
+    top: var(--ap-hexagon--border-width);
+    bottom: var(--ap-hexagon--border-width);
+    right: var(--ap-hexagon--border-width);
+    left: var(--ap-hexagon--border-width);
+
+    & .ap-hexagon__layer--content {
+      position: absolute;
+      top: calc(-1 * var(--ap-hexagon--border-width));
+      bottom: calc(-1 * var(--ap-hexagon--border-width));
+      right: calc(-1 * var(--ap-hexagon--border-width));
+      left: calc(-1 * var(--ap-hexagon--border-width));
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

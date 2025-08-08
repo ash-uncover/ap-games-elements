@@ -1,0 +1,28 @@
+:root {
+  --ap-elements-element-selector--flex-direction: column;
+  --ap-elements-element-selector_row--flex-direction: row;
+}
+
+.ap-elements-element-selector {
+  display: flex;
+  flex-direction: var(--ap-elements-element-selector--flex-direction);
+  align-items: center;
+  justify-content: center;
+
+  &.ap-elements-element-selector--vertical {
+    --ap-elements-element-selector--flex-direction: column;
+    --ap-elements-element-selector_row--flex-direction: row;
+  }
+
+  &.ap-elements-element-selector--horizontal {
+    --ap-elements-element-selector--flex-direction: row;
+    --ap-elements-element-selector_row--flex-direction: column;
+  }
+
+  &>.ap-elements-element-selector__row {
+    display: flex;
+    flex-direction: var(--ap-elements-element-selector_row--flex-direction);
+    align-items: center;
+    justify-content: center;
+  }
+}
