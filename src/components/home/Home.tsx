@@ -3,10 +3,11 @@ import { useMediaQuery } from 'react-responsive'
 import { ShellPage, useClasses, useIsPhone } from '@sol.ac/react-commons'
 //
 import { ElementSelector } from '../commons/elements/ElementSelector'
-import { ELEMENTS } from '../../lib/data/elements'
+import { ElementData, ELEMENTS } from '../../lib/data/elements'
 // CSS
 import './Home.css'
 import { HexagonOrientations } from '../commons/hexagon/HexagonOrientation'
+import { Hexagon } from '../commons/hexagon/Hexagon'
 
 // #region Declaration
 interface HomeProperties {
@@ -30,6 +31,12 @@ export const Home = ({
   // #endregion
 
   // #region > Events
+  function handleElementClick(element: ElementData) {
+    console.log(element.name)
+  }
+  function handleElementHover(element: ElementData | null) {
+    console.log(element?.name)
+  }
   // #endregion
 
   // #region > Render
@@ -37,17 +44,34 @@ export const Home = ({
     <ShellPage className={classes}>
       HOME
       <div>
-        <div>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}
+        >
           <ElementSelector
             elements={Object.values(ELEMENTS)}
-            onElementClick={(element) => console.log(element.name)}
+            onElementClick={handleElementClick}
+            onElementHover={handleElementHover}
           />
         </div>
-        <div>
+        <br />
+        <br />
+        <br />
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}
+        >
           <ElementSelector
             elements={Object.values(ELEMENTS)}
             orientation={HexagonOrientations.HORIZONTAL}
-            onElementClick={(element) => console.log(element.name)}
+            onElementClick={handleElementClick}
+            onElementHover={handleElementHover}
           />
         </div>
         <h1>Device Test!</h1>

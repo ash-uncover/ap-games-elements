@@ -6,11 +6,15 @@
 
 .ap-hexagon-container {
 
+  background: var(--ap-hexagon-container--hexagon-background-color);
+
   &.ap-hexagon-container--vertical {
-    margin-bottom: calc(var(--ap-hexagon-container--hexagon-size) / 4 + var(--ap-hexagon-container--hexagon-border-width))
+    padding-bottom: calc(var(--ap-hexagon-container--hexagon-size) / 4 + var(--ap-hexagon-container--hexagon-border-width));
+    padding-right: calc(var(--ap-hexagon-container--hexagon-border-width) + 1px);
   }
   
   &.ap-hexagon-container--horizontal {
-    margin-right: calc(var(--ap-hexagon-container--hexagon-size) / 4 + var(--ap-hexagon-container--hexagon-border-width))
+    padding-right: calc(var(--ap-hexagon-container--hexagon-size) / 4 + var(--ap-hexagon-container--hexagon-border-width));
+    padding-bottom: calc(var(--ap-hexagon-container--hexagon-border-width) + 1px);
   }
 }

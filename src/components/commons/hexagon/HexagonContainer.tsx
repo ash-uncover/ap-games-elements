@@ -4,6 +4,7 @@ import { useClasseName, useClasses } from '@sol.ac/react-commons'
 import { type HexagonOrientation, HexagonOrientations } from './HexagonOrientation'
 //
 import './HexagonContainer.css'
+import { HexagonProvider } from './HexagonProvider'
 
 // #region Declaration
 export interface HexagonContainerProperties extends React.PropsWithChildren {
@@ -46,18 +47,25 @@ export const HexagonContainer = ({
   // #region > Render
 
   return (
-    <div
-      className={classes}
-      style={{
-        ...style,
-        // @ts-ignore
-        '--ap-hexagon-container--hexagon-background-color': borderColor,
-        '--ap-hexagon-container--hexagon-border-width': borderWidth,
-        '--ap-hexagon-container--hexagon-size': size
-      }}
+    <HexagonProvider
+      borderColor={borderColor}
+      borderWidth={borderWidth}
+      orientation={orientation}
+      size={size}
     >
-      {children}
-    </div>
+      <div
+        className={classes}
+        style={{
+          ...style,
+          // @ts-ignore
+          '--ap-hexagon-container--hexagon-background-color': borderColor,
+          '--ap-hexagon-container--hexagon-border-width': borderWidth,
+          '--ap-hexagon-container--hexagon-size': size
+        }}
+      >
+        {children}
+      </div>
+    </HexagonProvider>
   )
 }
 // #endregion

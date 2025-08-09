@@ -2,7 +2,6 @@ import React from 'react'
 import { useClasseName, useClasses } from '@sol.ac/react-commons'
 //
 import { Hexagon } from '../hexagon/Hexagon'
-import { HexagonOrientation } from '../hexagon/HexagonOrientation'
 // CSS
 import './ElementSelectorTile.css'
 
@@ -14,23 +13,20 @@ interface ElementSelectorTileProperties {
   color: string
   image: string
   name: string
-  orientation: HexagonOrientation
-  size?: string
   onClick: () => void
+  onMouseEnter: () => void
+  onMouseLeave: () => void
 }
 // #endregion
 
 // #region Component
 export const ElementSelectorTile = ({
   className,
-  style,
 
-  color,
   image,
-  name,
-  orientation,
-  size,
   onClick,
+  onMouseEnter,
+  onMouseLeave,
 }: ElementSelectorTileProperties) => {
 
   // #region > Hooks
@@ -42,20 +38,18 @@ export const ElementSelectorTile = ({
   function handleClick() {
     onClick()
   }
+  function handleMouseEnter() {
+    onMouseEnter()
+  }
+  function handleMouseLeave() {
+    onMouseLeave()
+  }
   // #endregion
 
   // #region > Render
   return (
     <Hexagon
-      // style={{
-      //   ...style,
-      //   // @ts-ignore
-      //   "--ap-elements-element-selector-tile--border-color": color
-      // }}
-      // title={name}
       className={classes}
-      borderColor='red'
-      orientation={orientation}
     >
       <div
         className='ap-elements-element-selector-tile__content'
@@ -66,6 +60,8 @@ export const ElementSelectorTile = ({
           background: 'grey'
         }}
         onClick={handleClick}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
         <img
           className='ap-elements-element-selector-tile__image'

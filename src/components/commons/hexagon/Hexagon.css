@@ -2,22 +2,23 @@
   sqrt(3) / 2 = 0.8660254037844386
   sqrt(3) / 4 = 0.4330127018922193
 */
-
-.ap-hexagon {
+:root {
   --ap-hexagon--background-color: var(--ap-hexagon-container--hexagon-background-color);
   --ap-hexagon--border-width: var(--ap-hexagon-container--hexagon-border-width);
   --ap-hexagon--size: var(--ap-hexagon-container--hexagon-size);
+}
+
+.ap-hexagon {
 
   user-select: none;
-
-  margin-bottom: calc(-1 * var(--ap-hexagon--border-width));
-  margin-right: calc(-1 * var(--ap-hexagon--border-width));
-
+ 
   &.ap-hexagon--vertical {
     height: calc(3 * var(--ap-hexagon--size) / 4);
     aspect-ratio: 0.8660254037844386 / 0.75;
-
     
+    margin-bottom: calc(-1 * var(--ap-hexagon--border-width) + 1px);
+    margin-right: calc(-1 * var(--ap-hexagon--border-width) - 1px);
+
     & .ap-hexagon__layer--border {
       height: var(--ap-hexagon--size);
       width: 100%;
@@ -31,6 +32,9 @@
   &.ap-hexagon--horizontal {
     width: calc(3 * var(--ap-hexagon--size) / 4);
     aspect-ratio: 0.75 / 0.8660254037844386;
+
+    margin-bottom: calc(-1 * var(--ap-hexagon--border-width) - 1px);
+    margin-right: calc(-1 * var(--ap-hexagon--border-width) + 1px);
 
     & .ap-hexagon__layer--border {
       width: var(--ap-hexagon--size);
@@ -52,8 +56,11 @@
     display: inline-block;
     position: relative;
     box-sizing: border-box;
-    transition: background-color 0.5s ease-out;
     background-color: var(--ap-hexagon--background-color);
+
+    &:hover {
+      z-index: 1;
+    }
   }
 
   & .ap-hexagon__layer--content-container {

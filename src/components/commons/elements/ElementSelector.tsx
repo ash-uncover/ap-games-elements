@@ -3,10 +3,10 @@ import { useClasseName, useClasses } from '@sol.ac/react-commons'
 //
 import { ElementData } from '../../../lib/data/elements'
 import { ElementSelectorTile } from './ElementSelectorTile'
-// CSS
-import './ElementSelector.css'
 import { HexagonOrientation, HexagonOrientations } from '../hexagon/HexagonOrientation'
 import { HexagonContainer } from '../hexagon/HexagonContainer'
+// CSS
+import './ElementSelector.css'
 
 // #region Declaration
 interface ElementSelectorProperties {
@@ -16,6 +16,7 @@ interface ElementSelectorProperties {
   elements: ElementData[]
   orientation?: HexagonOrientation
   onElementClick: (element: ElementData) => void
+  onElementHover: (element: ElementData | null) => void
 }
 // #endregion
 
@@ -27,9 +28,11 @@ export const ElementSelector = ({
   elements,
   orientation,
   onElementClick,
+  onElementHover
 }: ElementSelectorProperties) => {
 
   // #region > Hooks
+  const [elementHover, setElementHover] = React.useState(null)
   const [elementRows, setElementRows] = React.useState<ElementData[][]>([])
   React.useEffect(() => {
     setElementRows([
@@ -54,6 +57,16 @@ export const ElementSelector = ({
   function handleElementClick(element: ElementData) {
     onElementClick(element)
   }
+  function handleElementMouseEnter(element: ElementData) {
+    onElementHover(element)
+    setElementHover(element)
+  }
+  function handleElementMouseLeave(element: ElementData) {
+    if (elementHover === element) {
+      onElementHover(null)
+      setElementHover(null)
+    }
+  }
   // #endregion
 
   // #region > Render
@@ -61,9 +74,9 @@ export const ElementSelector = ({
   return (
     <HexagonContainer
       className={classes}
-      borderColor='black'
+      borderColor='transparent'
       borderWidth='5px'
-      orientation={orientation || HexagonOrientations.VERTICAL}
+      orientation={orientation}
       size={size}
       style={style}
     >
@@ -80,8 +93,9 @@ export const ElementSelector = ({
                   color={element.color}
                   image={`/images/${element.id.toUpperCase()}-removebg-preview.png`}
                   name={element.name}
-                  orientation={orientation || HexagonOrientations.VERTICAL}
                   onClick={() => handleElementClick(element)}
+                  onMouseEnter={() => handleElementMouseEnter(element)}
+                  onMouseLeave={() => handleElementMouseLeave(element)}
                 />
               )
             })}

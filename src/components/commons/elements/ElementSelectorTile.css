@@ -9,6 +9,7 @@
   &::hover {
     --ap-hexagon--background-color: 'green' !important;
   }
+
   & .ap-elements-element-selector-tile__content {
     width: 100%;
     height: 100%;
@@ -30,4 +31,14 @@
       aspect-ratio: 1;
     }
   }
+
+  &:hover {
+    --ap-hexagon--background-color: gold !important;
+  }
+
+  /* & .ap-hexagon__layer--border {
+    &:hover {
+      --ap-hexagon--background-color: green;
+    }
+  } */
 }
